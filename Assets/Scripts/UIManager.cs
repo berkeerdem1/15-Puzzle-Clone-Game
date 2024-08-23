@@ -37,16 +37,16 @@ public class UIManager : MonoBehaviour
     public void EasyMode()
     {
         gameManager.ChangeDifficulty(GameManager.DifficultyMode.Easy);
-        gameManager.maxMove = 3;
+        gameManager.maxMove = 4;
     }
     public void MediumMode()
     {
         gameManager.ChangeDifficulty(GameManager.DifficultyMode.Medium);
-        gameManager.maxMove = 2;
+        gameManager.maxMove = 3;
     }
     public void HardMode()
     {
         gameManager.ChangeDifficulty(GameManager.DifficultyMode.Hard);
-        gameManager.maxMove = 1;
+        gameManager.maxMove = 2;
     }
 }
