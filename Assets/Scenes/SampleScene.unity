@@ -532,10 +532,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 780183989}
     - target: {fileID: 986458626162289367, guid: c093d3415cb2bc24b8e58fe157838868, type: 3}
-      propertyPath: currentMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 986458626162289367, guid: c093d3415cb2bc24b8e58fe157838868, type: 3}
       propertyPath: endMoveText
       value: 
       objectReference: {fileID: 1057775147}

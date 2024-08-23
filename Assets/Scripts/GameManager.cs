@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         gameOverImage.SetActive(false);
 
         currentMode = DifficultyMode.Hard;
+        maxMove = 2;
         Shuffle(); 
 
     }
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
 
             if (hit && !isFinished) 
             {
-                if(Vector2.Distance( emptySpace.position, hit.transform.position) <= maxMove) // If the distance of the empty space is less than 2 units from the clicked tile
+                if(Vector2.Distance( emptySpace.position, hit.transform.position) < maxMove) // If the distance of the empty space is less than 2 units from the clicked tile
                 {
                     Vector2 lastEmptySpacePos = emptySpace.position;  // Create Vector2 variable, new emptySpace pos.
                     Tiles thisTile = hit.transform.GetComponent<Tiles>(); // Hit tiles component

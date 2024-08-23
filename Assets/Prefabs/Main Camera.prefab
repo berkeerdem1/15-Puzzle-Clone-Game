@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daee9be8b32354d4f866e50cc05fbfe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMove: 0
   moveAmount: 0
   lastMoveAmount: 100
   isFinished: 0
@@ -137,6 +138,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  currentMode: 2
 --- !u!114 &7785812278669864548
 MonoBehaviour:
   m_ObjectHideFlags: 0
