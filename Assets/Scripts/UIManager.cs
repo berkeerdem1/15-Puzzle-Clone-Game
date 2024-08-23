@@ -33,4 +33,20 @@ public class UIManager : MonoBehaviour
         gameManager.ModeSettings();
         gameModeImage.SetActive(false);
     }
+
+    public void EasyMode()
+    {
+        gameManager.ChangeDifficulty(GameManager.DifficultyMode.Easy);
+        gameManager.maxMove = 3;
+    }
+    public void MediumMode()
+    {
+        gameManager.ChangeDifficulty(GameManager.DifficultyMode.Medium);
+        gameManager.maxMove = 2;
+    }
+    public void HardMode()
+    {
+        gameManager.ChangeDifficulty(GameManager.DifficultyMode.Hard);
+        gameManager.maxMove = 1;
+    }
 }

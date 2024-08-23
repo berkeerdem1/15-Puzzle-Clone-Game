@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class Tiles : MonoBehaviour
 {
     public bool inRightPlace = false;

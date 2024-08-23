@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public int maxMove;
     public int moveAmount = 0;
     public int lastMoveAmount;
 
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     private Timerr timer;
     private int emptySpaceIndex = 15;
 
+    public DifficultyMode currentMode = DifficultyMode.Medium;
     private void Awake()
     {
         timer = GetComponent<Timerr>();
@@ -42,9 +45,9 @@ public class GameManager : MonoBehaviour
             Ray ray = camera.ScreenPointToRay(Input.mousePosition); 
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-            if (hit) 
+            if (hit && !isFinished) 
             {
-                if(Vector2.Distance( emptySpace.position, hit.transform.position) < 2) // If the distance of the empty space is less than 2 units from the clicked tile
+                if(Vector2.Distance( emptySpace.position, hit.transform.position) < maxMove) // If the distance of the empty space is less than 2 units from the clicked tile
                 {
                     Vector2 lastEmptySpacePos = emptySpace.position;  // Create Vector2 variable, new emptySpace pos.
                     Tiles thisTile = hit.transform.GetComponent<Tiles>(); // Hit tiles component
@@ -154,6 +157,7 @@ public class GameManager : MonoBehaviour
             {
                 print("Game Over");
                 gameOverImage.SetActive(true);
+                timer.StopTimer();
             }
         }
         
@@ -237,5 +241,14 @@ public class GameManager : MonoBehaviour
         return inversionSum; // Return total number of inversions
     } // Finds the sum of inversion
 
-
+    public void ChangeDifficulty(DifficultyMode mode)
+    {
+        currentMode = mode;
+    }
+    public enum DifficultyMode
+    {
+        Easy,
+        Medium,
+        Hard
+    }
 }
